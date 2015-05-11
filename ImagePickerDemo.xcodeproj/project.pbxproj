@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0A3839D1AFEEF8D005EF86F /* SRWebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3839C1AFEEF8D005EF86F /* SRWebClient.swift */; };
+		E0A3839F1AFF1805005EF86F /* ScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A3839E1AFF1805005EF86F /* ScanController.swift */; };
 		EA6CC3B019935BA000834E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6CC3AF19935BA000834E65 /* AppDelegate.swift */; };
 		EA6CC3B219935BA000834E65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6CC3B119935BA000834E65 /* ViewController.swift */; };
 		EA6CC3B519935BA000834E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6CC3B319935BA000834E65 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E0A3839C1AFEEF8D005EF86F /* SRWebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRWebClient.swift; sourceTree = "<group>"; };
+		E0A3839E1AFF1805005EF86F /* ScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanController.swift; sourceTree = "<group>"; };
 		EA6CC3AA19935BA000834E65 /* ImagePickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagePickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6CC3AE19935BA000834E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6CC3AF19935BA000834E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 		EA6CC3AC19935BA000834E65 /* ImagePickerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E0A3839E1AFF1805005EF86F /* ScanController.swift */,
+				E0A3839C1AFEEF8D005EF86F /* SRWebClient.swift */,
 				EA6CC3AF19935BA000834E65 /* AppDelegate.swift */,
 				EA6CC3B119935BA000834E65 /* ViewController.swift */,
 				EA6CC3B319935BA000834E65 /* Main.storyboard */,
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A3839F1AFF1805005EF86F /* ScanController.swift in Sources */,
 				EA6CC3B219935BA000834E65 /* ViewController.swift in Sources */,
 				EA6CC3B019935BA000834E65 /* AppDelegate.swift in Sources */,
+				E0A3839D1AFEEF8D005EF86F /* SRWebClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
