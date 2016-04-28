@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9398BF30-C869-40D9-ABA9-A3DD21FB528E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ImagePickerDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2BB37EA83BBD6A599BF6B2500AD61D64FD4378CC</key>
+		<string>https://github.com/mitaliswain/imagePickerDemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ImagePickerDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2BB37EA83BBD6A599BF6B2500AD61D64FD4378CC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mitaliswain/imagePickerDemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2BB37EA83BBD6A599BF6B2500AD61D64FD4378CC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2BB37EA83BBD6A599BF6B2500AD61D64FD4378CC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>imagePickerDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

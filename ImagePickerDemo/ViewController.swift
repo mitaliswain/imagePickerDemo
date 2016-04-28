@@ -12,17 +12,22 @@ class ViewController: UIViewController,UIAlertViewDelegate,UIImagePickerControll
 {
     @IBOutlet weak var btnClickMe: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var secondImageView: UIImageView!
+    
+    var roomBarcode:String = ""
     var picker:UIImagePickerController?=UIImagePickerController()
     var popover:UIPopoverController?=nil
     var imageList :[UIImage] = []
     
+    @IBAction func sendToApp(sender: AnyObject) {
+        uploadImage()
+    }
+    
     @IBAction func postToFaceBook(sender: AnyObject) {
         var activityItems: [AnyObject]?
-        let image = secondImageView.image
-        var text : String = "Text"
+        let image = imageView.image
+        let text : String = "Text"
         
-        if (secondImageView.image != nil) {
+        if (imageView.image != nil) {
             activityItems = [ text, image!]
         } else {
             activityItems = ["Hi This is testing"]
@@ -43,7 +48,7 @@ class ViewController: UIViewController,UIAlertViewDelegate,UIImagePickerControll
         
         btnClickMe.layer.cornerRadius = btnClickMe.layer.frame.size.width/4
         btnClickMe.clipsToBounds = true
-        var tap = UITapGestureRecognizer(target: self, action: Selector("tappedMe"))
+        let tap = UITapGestureRecognizer(target: self, action: Selector("tappedMe"))
         imageView.addGestureRecognizer(tap)
         imageView.userInteractionEnabled = true
         
@@ -127,22 +132,19 @@ class ViewController: UIViewController,UIAlertViewDelegate,UIImagePickerControll
             popover!.presentPopoverFromRect(btnClickMe.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         }
     }
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
         picker .dismissViewControllerAnimated(true, completion: nil)
         
-        /*
+        
         if imageList.count <= 2 {
             imageList.append((info[UIImagePickerControllerOriginalImage] as? UIImage!)!)
         }
-   */
         
-        if imageView.image == nil {
         imageView.image=info[UIImagePickerControllerOriginalImage] as? UIImage
-            
-        } else {
-         secondImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        }
+        self.uploadImage()
+        
+        
         
         
     }
@@ -152,14 +154,30 @@ class ViewController: UIViewController,UIAlertViewDelegate,UIImagePickerControll
       //  println("Tapped on Image")
         //performSegueWithIdentifier("about", sender: sender)
     //}
-    
 
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController!)
     {
-        println("picker cancel.")
+        print("picker cancel.")
     }
     
+    func uploadImage() {
+        
+        let image = UIImage(CGImage: imageView.image!.CGImage, scale: 1, orientation: imageView.image!.imageOrientation)!
+        
+        
+        let imageData:NSData = UIImageJPEGRepresentation(image, 0.2)
+        SRWebClient.POST("http://scanning.herokuapp.com/scanning")
+            .data(imageData, fieldName:"upload[datafile]", data: ["barcode": self.roomBarcode,"baz":"qux"])
+            .send({(response:AnyObject!, status:Int) -> Void in
+                // process success response
+                print("success")
+                },failure:{(error:NSError!) -> Void in
+                    print(error)
+                    // process failure response
+            })
+    
+    }
     
 }
 
